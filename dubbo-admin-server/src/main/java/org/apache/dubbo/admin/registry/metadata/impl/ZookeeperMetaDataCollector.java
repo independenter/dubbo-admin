@@ -34,6 +34,7 @@ public class ZookeeperMetaDataCollector implements MetaDataCollector {
     private URL url;
     private String root;
     private final static String DEFAULT_ROOT = "dubbo";
+    private final static String META_DATA_FILE = "/service.data";
 
     @Override
     public void setUrl(URL url) {
@@ -68,7 +69,7 @@ public class ZookeeperMetaDataCollector implements MetaDataCollector {
     }
 
     private String getNodePath(MetadataIdentifier metadataIdentifier) {
-        return toRootDir() + metadataIdentifier.getUniqueKey(MetadataIdentifier.KeyTypeEnum.PATH);
+        return toRootDir() + metadataIdentifier.getUniqueKey(MetadataIdentifier.KeyTypeEnum.PATH)+META_DATA_FILE;
     }
 
     private String toRootDir() {
