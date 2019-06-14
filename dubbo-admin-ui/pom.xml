@@ -51,6 +51,16 @@
                             <nodeVersion>v9.11.1</nodeVersion>
                         </configuration>
                     </execution>
+                    <!-- clean cache all project cache dependencies -->
+                    <execution>
+                      <id>clean cache</id>
+                      <goals>
+                        <goal>npm</goal>
+                      </goals>
+                      <configuration>
+                        <arguments>cache clean --force</arguments>
+                      </configuration>
+                    </execution>
                     <!-- Install all project dependencies -->
                     <execution>
                         <id>npm install</id>
